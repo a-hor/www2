@@ -1,0 +1,17 @@
+<html lang="en">
+        {{>header}}
+
+        <div class="content">
+        <p>Podaj tytuł i autora</p>
+	<div class="container">
+	<form onsubmit="target_popup(this)">
+        <div><p><label for="tytul"><b>Tytuł: </b></label></p>
+            <p><input type="text" id="tytul" name="tytul" required></p></div>
+        <div><p><label for="autor"><b>Autor: </b></label></p>
+            <p><input type="text" id="autor" name="autor" required></p></div>
+        <div><p><input type="submit" value="Szukaj"> <input type="reset" value="Wyczyść"></p></div>
+	</form>
+	</div>
+    </div>
+        {{>footer}}
+</html>

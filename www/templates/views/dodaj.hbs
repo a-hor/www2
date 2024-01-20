@@ -1,0 +1,30 @@
+<html lang="en">
+        {{>header}}
+        <div class="content">
+        <p>Podaj tytuł i autora</p>
+	<div class="container">
+	<form onsubmit="target_popup(this)">
+        <div><p><label for="tytul"><b>Tytuł: </b></label></p>
+            <p><input type="text" id="tytul" name="tytul" required></p></div>
+        <div><p><label for="autor"><b>Autor: </b></label></p>
+            <p><input type="text" id="autor" name="autor" required></p></div>
+        <div><p><input type="submit" value="Dodaj"> <input type="reset" value="Wyczyść"></p></div>
+	</form>
+	</div>
+    </div>
+        {{>footer}}
+
+
+<script>
+function target_popup(form) {
+    alert("Książka jest dodawana");
+    const fs = require('fs');
+    //let book = <form action="" method="get"></form>
+    let book = ('Tytuł: ' + document.getElementById("tytul").value + ', Autor: ' + document.getElementById("autor").value + '\n');
+    fs.appendFile("biblioteczka.txt",'book',(err)=>{
+    if(err) alert("Wystąpił błąd! Spróbuj ponownie");
+    });
+    alert("Książka dodana");
+}
+</script>
+</html>

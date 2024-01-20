@@ -1,0 +1,20 @@
+<html lang="en">
+        {{>header}}
+        <div class="content">
+        <table id="results-table" border="1px solid black">
+    <tr>
+        <th>     tytuł  </th>
+        <th>     imię autora  </th>
+        <th>     nazwisko autora  </th>
+    </tr>
+    {{#each full_result}}
+    <tr>
+        <td>{{this.bk_title}}</td>
+        <td>{{this.aut_name}}</td>
+        <td>{{this.aut_surname}}</td>
+    </tr>
+    {{/each}}
+</table>
+    </div>
+        {{>footer}}
+</html>

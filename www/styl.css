@@ -1,0 +1,80 @@
+.dodaj{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e6f9ff;
+    min-width: 100 vw;
+    min-height: 100 vh;
+}
+
+.biblioteczka{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e6f9ff;
+    min-width: 100 vw;
+    min-height: 100 vh;
+}
+
+.biblioteczka h1{
+    color: navy;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.biblioteczka p{
+    color: navy;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navigation{
+    display:flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    background-color: #ccf2ff;
+    padding: 20px;
+    width: 100%;
+    top: 0
+}
+
+.navigation a {
+    color: navy;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10 10px;
+ }
+
+.biblioteczka ksiazki{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e6f9ff;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper > * {
+  padding: 15px;
+}
+
+.page-main {
+  flex-grow: 1;
+}

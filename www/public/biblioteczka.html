@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styl.css" rel="stylesheet" type="text/css">
+    <title>Biblioteczka</title>
+</head>
+<body>
+<div class="wrapper">
+<header class="navigation">
+    <div><a href="#biblioteczka">Biblioteczka</a></div>
+    <div><a href="#dodaj">Dodaj książkę</a></div>
+</label>
+</header>
+
+<main class="section biblioteczka" id="biblioteczka">
+    <div class="content">
+        <div><h1>Biblioteczka</h1></div>
+        <div><p>Dodawaj książki!</p></div>
+        <div class="ksiazki" id="ksiazki"><p><object data="biblioteczka.txt" width=200 height=400 frameborder=0 ></object></p></div>
+    </div>
+</main>
+
+
+<main class="section dodaj" id="dodaj">
+    <div class="content">
+        <h2>Dodaj książkę</h2>
+        <p>Podaj tytuł i autora</p>
+	<div class="container">
+	<form onsubmit="target_popup(this)">
+        <div><p><label for="tytul"><b>Tytuł: </b></label></p>
+            <p><input type="text" id="tytul" name="tytul" required></p></div>
+        <div><p><label for="autor"><b>Autor: </b></label></p>
+            <p><input type="text" id="autor" name="autor" required></p></div>
+        <div><p><input type="submit" value="Dodaj"> <input type="reset" value="Wyczyść"></p></div>
+	</form>
+	</div>
+    </div>
+</main>
+
+</div>
+
+
+<script>
+
+function target_popup(form) {
+    alert("Książka jest dodawana");
+    const fs = require('fs');
+    //let book = <form action="" method="get"></form>
+    let book = ('Tytuł: ' + document.getElementById("tytul").value + ', Autor: ' + document.getElementById("autor").value + '\n');
+    fs.appendFile("biblioteczka.txt",'book',(err)=>{
+    if(err) alert("Wystąpił błąd! Spróbuj ponownie");
+    });
+    alert("Książka dodana");
+}
+</script>
+</body>
+</html>
