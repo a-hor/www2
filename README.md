@@ -30,3 +30,8 @@ insert into books (bk_title, bk_aut_id) values ('ksiazka5', 3);
 insert into books (bk_title, bk_aut_id) values ('ksiazka6', 4);
 insert into books (bk_title, bk_aut_id) values ('ksiazka7', 4);
 insert into books (bk_title, bk_aut_id) values ('ksiazka8', 5);
+
+
+----
+
+node ./app.js
