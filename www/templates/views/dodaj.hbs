@@ -6,8 +6,10 @@
 	<form onsubmit="target_popup(this)">
         <div><p><label for="tytul"><b>Tytuł: </b></label></p>
             <p><input type="text" id="tytul" name="tytul" required></p></div>
-        <div><p><label for="autor"><b>Autor: </b></label></p>
-            <p><input type="text" id="autor" name="autor" required></p></div>
+        <div><p><label for="autor_imie"><b>Imię autora: </b></label></p>
+            <p><input type="text" id="autor_imie" name="autor_imie" required></p></div>
+                <div><p><label for="autor_nazwisko"><b>Nazwisko autora: </b></label></p>
+            <p><input type="text" id="autor_nazwisko" name="autor_nazwisko" required></p></div>
         <div><p><input type="submit" value="Dodaj"> <input type="reset" value="Wyczyść"></p></div>
 	</form>
 	</div>
@@ -21,9 +23,10 @@ function target_popup(form) {
     const fs = require('fs');
     //let book = <form action="" method="get"></form>
     let book = ('Tytuł: ' + document.getElementById("tytul").value + ', Autor: ' + document.getElementById("autor").value + '\n');
-    fs.appendFile("biblioteczka.txt",'book',(err)=>{
-    if(err) alert("Wystąpił błąd! Spróbuj ponownie");
-    });
+    con.query("CREATE TABLE ksiazki (ks_id INT AUTO_INCREMENT PRIMARY KEY, ks_title VARCHAR(255), ks_auth_id VARCHAR(255))", function (err, result) {
+    if (err) throw err;
+    console.log("Result: " + result);
+  });
     alert("Książka dodana");
 }
 </script>
