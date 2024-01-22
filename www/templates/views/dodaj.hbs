@@ -20,10 +20,12 @@
 <script>
 function target_popup(form) {
     alert("Książka jest dodawana");
-    const fs = require('fs');
+    //const fs = require('fs');
     //let book = <form action="" method="get"></form>
-    let book = ('Tytuł: ' + document.getElementById("tytul").value + ', Autor: ' + document.getElementById("autor").value + '\n');
-    con.query("CREATE TABLE ksiazki (ks_id INT AUTO_INCREMENT PRIMARY KEY, ks_title VARCHAR(255), ks_auth_id VARCHAR(255))", function (err, result) {
+    //let book = ('Tytuł: ' + document.getElementById("tytul").value + ', Autor: ' + document.getElementById("autor").value + '\n');
+
+    con.query("insert into authors (aut_name, aut_surname) values ("+document.getElementById("autor_imie").value+", "+document.getElementById("autor_nazwisko").value+");insert into books (bk_title) values ("+document.getElementById("autor_imie").value+");",
+    function (err, result) {
     if (err) throw err;
     console.log("Result: " + result);
   });

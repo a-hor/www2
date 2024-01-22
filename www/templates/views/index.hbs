@@ -9,9 +9,11 @@
     </tr>
     {{#each full_result}}
     <tr>
+        {{#each this}}
         <td>{{this.bk_title}}</td>
         <td>{{this.aut_name}}</td>
         <td>{{this.aut_surname}}</td>
+        {{/each}}
     </tr>
     {{/each}}
 </table>

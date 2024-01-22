@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
         con.query(sql_full_list, function (err, result, fields) {
            if (err) throw err;
            var full_result=result;
-           console.log(full_result);
+           console.log(full_result[0].bk_title);
             res.render("index", {
         title: "Biblioteczka",
         full_list: full_result
@@ -43,6 +43,21 @@ app.get("/wyszukaj", (req, res) => {
         title: "Wyszukaj"
     });
 });
+
+function dodaj_ksiazke(title,auth_name,auth_surname){
+var sql1 = 'INSERT INTO authors (aut_name, aut_surname) VALUES (?,?);';
+var sql2 = 'INSERT INTO books (bk_title, bk_aut_id) VALUES (?, ?)';
+con.query(sql1, [auth_name, auth_surname], function (err, result) {
+  if (err) throw err;
+  con.query(sql2, [title, result.insertId], function (err, result) {
+  if (err) throw err;
+  console.log(result);
+});
+  console.log(result);
+});
+}
+
+
 app.listen(3000, () => {
     console.log("Listening on port 3000");
 });
