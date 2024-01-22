@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
         con.query(sql_full_list, function (err, result, fields) {
            if (err) throw err;
            var full_result=result;
-           console.log(full_result[0].bk_title);
+           console.log(full_result);
             res.render("index", {
         title: "Biblioteczka",
         full_list: full_result
